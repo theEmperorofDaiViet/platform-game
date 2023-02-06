@@ -33,6 +33,40 @@
     margin-block-end: 0.5em;
 }
 
+.game-data {
+    display: flex;
+}
+
+.level {
+    display: inline;
+    float: left;
+    width: 50%;
+    text-align: left;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 36px;
+    margin-block-start: 0.25em;
+    margin-block-end: 0.25em;
+}
+
+.lives {
+    display: inline;
+    float: right;
+    width: 50%;
+    text-align: right;
+    margin-block-start: 0.75em;
+    margin-block-end: 0.25em;
+}
+
+.heart {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+.emptyHeart {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
 .background { 
     background: rgb(52, 166, 251);
     table-layout: fixed;

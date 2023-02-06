@@ -343,9 +343,37 @@ function runLevel(level, Display) {
 }
 
 async function runGame(plans, Display) {
-    for (let level = 0; level < plans.length;) {
+    let lives = 3;
+    let div = document.querySelector(".lives");  
+    for (let i = 0; i < lives; i++) {
+        var heart = document.createElement("img");
+        heart.src = "./images/heart.png";
+        heart.width = "40";
+        heart.className = "heart";
+        div.append(heart);            
+    }
+    for (let level = 0; level < plans.length && lives > 0;) {     
+        console.log(`Level ${level + 1}, lives: ${lives}`);
+        let div = document.querySelector(".level");
+        var thisLevel = document.createTextNode(`Level ${level + 1}`);
+        div.appendChild(thisLevel);
         let status = await runLevel(new Level(plans[level]), Display);
         if (status == "won") level++;
+        else {
+            lives--;
+            var heart = document.querySelector(".heart");
+            heart.remove();
+            let div = document.querySelector(".lives");
+            var emptyHeart = document.createElement("img");
+            emptyHeart.src = "./images/empty-heart.png";
+            emptyHeart.width = "40";
+            emptyHeart.className = "emptyHeart";
+            div.append(emptyHeart);    
+        }
     }
-    console.log("You've won!");
+    if (lives > 0) {
+        console.log("You've won!");
+    } else {
+        console.log("Game over");
+    }
 }
