@@ -370,6 +370,8 @@ async function runGame(plans, Display) {
             emptyHeart.className = "emptyHeart";
             div.append(emptyHeart);    
         }
+        var thislevel = document.querySelector(".level");
+        thislevel.childNodes[0].remove();
     }
     if (lives > 0) {
         console.log("You've won!");
