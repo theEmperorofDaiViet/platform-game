@@ -344,13 +344,13 @@ function runLevel(level, Display) {
 
 async function runGame(plans, Display) {
     let lives = 3;
-    let div = document.querySelector(".lives");  
+    let livesDiv = document.querySelector(".lives");  
     for (let i = 0; i < lives; i++) {
         var heart = document.createElement("img");
         heart.src = "./images/heart.png";
         heart.width = "40";
         heart.className = "heart";
-        div.append(heart);            
+        livesDiv.append(heart);            
     }
     for (let level = 0; level < plans.length && lives > 0;) {     
         console.log(`Level ${level + 1}, lives: ${lives}`);
@@ -373,9 +373,18 @@ async function runGame(plans, Display) {
         var thislevel = document.querySelector(".level");
         thislevel.childNodes[0].remove();
     }
+    let div = document.querySelector("#content");
+    let notiDiv = document.createElement("div");
+    notiDiv.className = "notification";
     if (lives > 0) {
+        var noti = document.createTextNode("You've Won!");
         console.log("You've won!");
+        notiDiv.appendChild(noti);
+        div.appendChild(notiDiv);
     } else {
+        var noti = document.createTextNode("Game Over!");
         console.log("Game over");
+        notiDiv.appendChild(noti);
+        div.appendChild(notiDiv);
     }
 }
