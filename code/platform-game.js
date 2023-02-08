@@ -418,7 +418,7 @@ async function runGame(plans, Display) {
         heart.className = "heart";
         livesDiv.append(heart);            
     }
-    for (let level = 4; level < plans.length && lives > 0;) {     
+    for (let level = 0; level < plans.length && lives > 0;) {     
         console.log(`Level ${level + 1}, lives: ${lives}`);
         let div = document.querySelector(".level");
         var thisLevel = document.createTextNode(`Level ${level + 1}`);
@@ -446,11 +446,41 @@ async function runGame(plans, Display) {
         var noti = document.createTextNode("You've Won!");
         console.log("You've won!");
         notiDiv.appendChild(noti);
+
+        var congratulation = document.createElement("div");
+        var video = document.createElement("video");
+        video.width = "960";
+        video.height = "540";
+        video.controls = "true";
+        video.autoplay = "true";
+        video.loop = "true";
+        var source = document.createElement("source");
+        source.src = "./images/congratulation.mp4";
+        source.type = "video/mp4";
+        video.appendChild(source);
+        congratulation.appendChild(video);
+        notiDiv.appendChild(congratulation);
+
         div.appendChild(notiDiv);
     } else {
         var noti = document.createTextNode("Game Over!");
         console.log("Game over");
         notiDiv.appendChild(noti);
+
+        var gameover = document.createElement("div");
+        var video = document.createElement("video");
+        video.width = "960";
+        video.height = "540";
+        video.controls = "true";
+        video.autoplay = "true";
+        video.loop = "true";
+        var source = document.createElement("source");
+        source.src = "./images/gameover.mp4";
+        source.type = "video/mp4";
+        video.appendChild(source);
+        gameover.appendChild(video);
+        notiDiv.appendChild(gameover);
+
         div.appendChild(notiDiv);
     }
 }
