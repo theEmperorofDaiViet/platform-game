@@ -32,7 +32,7 @@
 </p>
 
 # About The Project
-A Platfrom Game from chapter 16 of the famous book about JS - "Eloquent JavaScript".
+A Platfrom Game from chapter 16 of the famous book about JS - "Eloquent JavaScript", with a few additional features.
 
 ## Built With
 * [![HTML5][HTML5-shield]][HTML5-url]
@@ -69,11 +69,21 @@ As usual, the app should automatically open in a new tab in your browser. It run
     <img src="images\thegame.png">
 </p>
 
-<p>The dark box represents the player, whose task is to collect the yellow boxes (coins) while avoiding the red stuff (lava). A level is completed when all coins have been collected.</p>
+<p>The dark box represents the player, whose task is to collect the yellow boxes (coins) while avoiding the red stuff (lava) and the purple stuff (monsters). A level is completed when all coins have been collected. The player starts with 5 <i>lives</i> and lose one life each time they die. When the player is out of lives, the game restarts from the beginning. You can check the player's lives at the top-right corner of the game. The empty heart is the life that the player've lost, while the filled one represents the remainder.</p>
 
 <p>The player can walk around with the left :arrow_left: and right :arrow_right: arrow keys and can jump with the up :arrow_up: arrow. Jumping is a specialty of this game character. It can reach several times its own height and can change direction in midair. This may not be entirely realistic, but it helps give the player the feeling of being in direct control of the on-screen avatar.</p>
 
 <p>The game consists of a static background, laid out like a grid, with the moving elements overlaid on that background. Each field on the grid is either empty, solid, or lava. The moving elements are the player, coins, and certain pieces of lava. The positions of these elements are not constrained to the grid—their coordinates may be fractional, allowing smooth motion.</p>
+
+Lava are represent by red boxes. There are different kinds of lava:
+  - <b>Normal lava:</b> lava that doesn't move
+  - <b>Horizontally moving lava:</b> lava that move back and forth horizontally
+  - <b>Vertically moving lava:</b> lava that move like vertically moving blobs
+  - <b><i>Dripping</i> lava:</b> vertically moving lava that doesn't bounce back and forth but only moves down, jumping back to its starting position when it hits the floor.
+
+<p>Monsters are represent by purple boxes. They move only horizontally and can't fall (or they can "<i>fly</i>", in other words). The player can defeat a monster by jumping on top of it. If this is the case, the monster disappears. But if the player touches other parts of the monster, the player die.</p>
+
+<p>You can pause and unpause the game by pressing the <kbd>Esc</kbd> key.</p>
 
 ## The Technology
 
@@ -86,6 +96,19 @@ As usual, the app should automatically open in a new tab in your browser. It run
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Usage
+<i>I played the first level of the game to illustrate its features:</i>
+
+<p align="center">
+    <img src="images\example.gif">
+</p>
+
+- At the first two attempts, I tried to defeat the monster, but failed.
+- At the third attempts, I fell into the lava.
+- At the fourth attempts, I failed to defeat the monster again.
+- And in my last chance, I defeated the monster, and collected all the coins to complete the first level.
+- The second level was displayed.
+
+There will be a surprise for you when you complete all levels and win the game! Try to figure it out!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

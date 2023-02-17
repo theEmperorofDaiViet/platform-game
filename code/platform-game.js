@@ -420,7 +420,7 @@ async function runGame(plans, Display) {
         heart.className = "heart";
         livesDiv.append(heart);            
     }
-    for (let level = 4; level < plans.length && lives > 0;) {     
+    for (let level = 0; level < plans.length && lives > 0;) {     
         console.log(`Level ${level + 1}, lives: ${lives}`);
         let div = document.querySelector(".level");
         var thisLevel = document.createTextNode(`Level ${level + 1}`);
